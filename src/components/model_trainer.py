@@ -3,14 +3,10 @@ import sys
 from dataclasses import dataclass
 
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import (
-   RandomForestRegressor,
-   AdaBoostClassifier,
-GradientBoostingClassifier
-)
+from sklearn.ensemble import (RandomForestRegressor,AdaBoostRegressor,GradientBoostingRegressor)
 from sklearn.svm import SVR
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
 
@@ -36,18 +32,14 @@ class ModelTrainer:
         test_array[:,-1]
       )
 
-      models={
-        "RandomForestRegressor":RandomForestRegressor(),
-        "LinearRegression":LinearRegression(),
-        "SupportVectorMachine":SVR(),
-        "DecisionTree":DecisionTreeClassifier(),
-        "KNearestNeighbour":KNeighborsRegressor(),
-        "AdaBoost":AdaBoostClassifier(),
-        "GradientBoosting":GradientBoostingClassifier(),
-        "XgBoost":XGBRegressor()
-      }
-
-      
+      models = {
+                "Random Forest": RandomForestRegressor(),
+                "Decision Tree": DecisionTreeRegressor(),
+                "Gradient Boosting": GradientBoostingRegressor(),
+                "Linear Regression": LinearRegression(),
+                "XGBRegressor": XGBRegressor(),
+                "AdaBoost Regressor": AdaBoostRegressor(),
+            }
       params={
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -73,18 +65,13 @@ class ModelTrainer:
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
                 },
-                "CatBoosting Regressor":{
-                    'depth': [6,8,10],
-                    'learning_rate': [0.01, 0.05, 0.1],
-                    'iterations': [30, 50, 100]
-                },
                 "AdaBoost Regressor":{
                     'learning_rate':[.1,.01,0.5,.001],
                     # 'loss':['linear','square','exponential'],
                     'n_estimators': [8,16,32,64,128,256]
                 }
                 
-      }
+            }
       model_report:dict=evaluate_models(x_train=x_train,y_train=y_train,x_test=x_test,y_test=y_test,
                                         models=models,param=params)
       
