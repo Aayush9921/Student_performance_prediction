@@ -31,7 +31,7 @@ def index():
      predict_pipeline=PredictPipeline()
      print("Mid Prediction")
      results=predict_pipeline.predict(pred_df)
-     print("after Prediction")
+     print(f"after Prediction result is {results[0]}")
      return render_template('form.html',results=results[0])
     
 
