@@ -16,7 +16,7 @@ Educational performance prediction can help identify students who may need addit
 
 ### project structure
 
-Student Performance Prediction/ ├── artifact # Model artifacts and output files ├── logs # Logs for monitoring and debugging ├── notebook # Jupyter notebooks for experimentation ├── src # Source code for the application ├── Student_Performance_prediction.egg-info # Metadata for the package ├── templates # HTML templates for the web interface ├── venv # Virtual environment for dependencies ├── .gitignore # Specifies files to ignore in version control ├── app.py # Main application file ├── README.md # Project documentation ├── requirements.txt # List of dependencies ├── Screenshot (69).png # Screenshot of model deployment └── setup.py # Setup script for packaging
+![alt text](image.png)
 
 ### Features
 
