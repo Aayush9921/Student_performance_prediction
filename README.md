@@ -16,19 +16,7 @@ Educational performance prediction can help identify students who may need addit
 
 ### project structure
 
-Student_Performance_Prediction/
-├── artifact/                # Directory for storing model artifacts and related files
-├── logs/                    # Logs for tracking and debugging
-├── notebook/                # Jupyter notebooks for exploratory data analysis and experiments
-├── src/                     # Source code for model training and prediction
-├── templates/               # HTML templates for Flask frontend
-├── venv/                    # Virtual environment for dependency management
-├── .gitignore               # Git ignore file
-├── app.py                   # Flask application
-├── README.md                # Project documentation
-├── requirements.txt         # Python dependencies
-├── Screenshot (69).png      # Screenshot image (model deployment screenshot)
-└── setup.py                 # Setup file for project packaging
+![alt text](image.png)
 
 ### Features
 
